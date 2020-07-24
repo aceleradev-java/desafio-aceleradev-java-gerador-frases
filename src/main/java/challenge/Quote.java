@@ -31,7 +31,7 @@ public class Quote {
 	}
 
 	public String getActor() {
-		return null;
+		return actor;
 	}
 
 	public void setActor(String actor) {
