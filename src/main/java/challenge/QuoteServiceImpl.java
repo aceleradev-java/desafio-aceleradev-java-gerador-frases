@@ -11,7 +11,7 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuote() {
-		return null;
+	    return null;
 	}
 
 	@Override
