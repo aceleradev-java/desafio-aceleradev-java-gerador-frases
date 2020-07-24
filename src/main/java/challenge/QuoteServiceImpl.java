@@ -1,5 +1,9 @@
 package challenge;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +15,12 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuote() {
-	    return null;
+	    Optional<List<Quote>> quotes = Optional.ofNullable(repository.findAll());
+	    if (quotes.isPresent()) {
+	        Collections.shuffle(quotes.get());
+	        return quotes.get().get(0);
+        }
+	    return new Quote();
 	}
 
 	@Override
