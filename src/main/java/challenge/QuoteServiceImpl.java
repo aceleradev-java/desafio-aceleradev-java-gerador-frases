@@ -25,7 +25,12 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuoteByActor(String actor) {
-		return null;
+	    Optional<List<Quote>>  quotes =  Optional.ofNullable(repository.findByActor(actor));
+	    if (!quotes.isPresent()) {
+	        throw new ResourceNotFoundException("Quote not found");
+	    }
+	    Collections.shuffle(quotes.get());
+	    return quotes.get().get(0);
 	}
 
 }
