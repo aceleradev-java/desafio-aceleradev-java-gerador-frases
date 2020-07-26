@@ -2,7 +2,6 @@ package challenge;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,22 +14,16 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuote() {
-	    Optional<List<Quote>> quotes = Optional.ofNullable(repository.findAll());
-	    if (quotes.isPresent()) {
-	        Collections.shuffle(quotes.get());
-	        return quotes.get().get(0);
-        }
-	    return new Quote();
+        List<Quote> quotes = repository.findAll();
+        Collections.shuffle(quotes);
+       return quotes.stream().findFirst().orElseThrow(() -> new ResourceNotFoundException("Quote not found"));
 	}
 
 	@Override
 	public Quote getQuoteByActor(String actor) {
-	    Optional<List<Quote>>  quotes =  Optional.ofNullable(repository.findByActor(actor));
-	    if (!quotes.isPresent()) {
-	        throw new ResourceNotFoundException("Quote not found");
-	    }
-	    Collections.shuffle(quotes.get());
-	    return quotes.get().get(0);
+        List<Quote> quotes = repository.findByActor(actor);
+        Collections.shuffle(quotes);
+       return quotes.stream().findFirst().orElseThrow(() -> new ResourceNotFoundException("Quote not found"));
 	}
 
 }
