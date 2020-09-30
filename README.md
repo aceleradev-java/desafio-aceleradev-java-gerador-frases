@@ -1,5 +1,25 @@
 # Gerador de frases do Monty Python
 
+<p>
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/aceleradev-java/desafio-aceleradev-java-gerador-frases">
+    <a href="https://github.com/aceleradev-java/desafio-aceleradev-java-gerador-frases">
+        <img alt="Made by" src="https://img.shields.io/badge/made%20by-adriano%20avelino-gree">
+    </a>
+    <img alt="Repository size" src="https://img.shields.io/github/repo-size/aceleradev-java/desafio-aceleradev-java-gerador-frases">
+    <a href="https://github.com/EliasGcf/readme-template/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/aceleradev-java/desafio-aceleradev-java-gerador-frases">
+    </a>
+</p>
+
+O Aceleradev é um treinamento da Codenation com duração de 10 semanas de imersão em programação, no meu caso, Java online. Esse é o desafio do sexto módulo que tem como conteúdo:
+- Cração de API
+	- GET, POST, PUT, DELETE
+	- Status code (20x, 40x, 50x)
+	- Paginação
+	- Bean Validationa
+
+## Desafio (Gerador de frases do Monty Python)
+
 Monty Python foi um dos grupos de comediantes mais influentes e reverenciados da história da TV. Vamos criar uma API para gerar frases aleatórias coletadas dos episódios da trupe, de acordo com nosso ator favorito.
 
 ## Tópicos
